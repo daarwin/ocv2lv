@@ -42,7 +42,7 @@
 #define WAIT_FOR_ANSWER_TIMEOUT	20
 #define CREATE_THREAD_ERROR		30
 #define CREATE_EVENT_ERROR		31
-#pragma endregion Коды ошибок
+#pragma endregion ReturnCodes
 
 extern "C" OCV2LV_API __int32 ocv2lvManager(cv::Size*, void*, __int32, __int32, __int32, bool*);
 __int32 ocv2lvChecker(cv::Size*, void*, __int32, __int32, __int32);

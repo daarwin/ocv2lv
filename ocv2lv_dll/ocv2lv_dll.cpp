@@ -76,8 +76,7 @@ void ocv2lvWorker(void* pArguments) {
 		_endthread();
 #endif
 	}
-	w_checkResult = w_mainCapture.set(CV_CAP_PROP_FRAME_WIDTH, w_LVarraySize.width);
-	w_checkResult = w_mainCapture.set(CV_CAP_PROP_FRAME_HEIGHT, w_LVarraySize.height);
+	w_checkResult = w_mainCapture.set(CV_CAP_PROP_FRAME_WIDTH, w_LVarraySize.width) &&  w_mainCapture.set(CV_CAP_PROP_FRAME_HEIGHT, w_LVarraySize.height);
 	if (!w_checkResult) {
 		w_mainCapture.release();
 		variablesBuffer::returnCode = CAP_SETPROPERTY_ERROR;
@@ -163,7 +162,7 @@ __int32 ocv2lvChecker(cv::Size* ch_LVarraySize, void* ch_LVarrayPointer, __int32
 			return BAD_ARRAY_POINTER;
 		else if (ch_cameraNumber < 0)
 			return BAD_CAMERA_NUMBER;
-		else if (ch_answerTimeout <= 0 || ch_answerTimeout <= 0)
+		else if (ch_answerTimeout <= 0 || ch_queryTimeout <= 0)
 			return BAD_TIMEOUT;
 		else
 			return ALL_OK;

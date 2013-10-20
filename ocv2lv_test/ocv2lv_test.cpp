@@ -18,11 +18,11 @@ int _tmain(int argc, _TCHAR* argv[])
 	bool _exitThread = false;
 	cv::namedWindow("test");
 
-	for (int i = 0; i < 10; i++) {
+	for (int i = 0; i < 100; i++) {
 		__int32 result = ocv2lvManager(testSize, testArray->data, _cameraNumber, _answerTimeout, _queryTimeout, &_exitThread);
 		if (!result) {
 			cv::imshow("test", *testArray);
-			cv::waitKey(1000);
+			cv::waitKey(20);
 		}
 		std::cout << result << std::endl;
 	}
